@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1번출력
+        //document.write("안녕하세요", "<br/>");
+        
+        //100번출력
+        // for(var i=0; i<100; i++){
+        //     document.write((i+1) + "안녕하세요", "<br/>");
+        // }
+
+        //여러문장을 출력
+        // document.write("안녕하세요", "<br/>");
+        // document.write("감사합니다", "<br/>");
+        // document.write("행복하세요", "<br/>");
+        // document.write("웃으세요", "<br/>");
+        // document.write("즐겁습니다", "<br/>");
+
+        //3번 반복
+        // for(var i=0; i<3; i++){
+        //     document.write("안녕하세요", "<br/>");
+        //     document.write("감사합니다", "<br/>");
+        //     document.write("행복하세요", "<br/>");
+        //     document.write("웃으세요", "<br/>");
+        //     document.write("즐겁습니다", "<br/>");
+        //     document.write("<br/>");
+        // }
+
+        //  함수 선언
+        function message(){
+            document.write("안녕하세요", "<br/>");
+            document.write("감사합니다", "<br/>");
+            document.write("행복하세요", "<br/>");
+            document.write("웃으세요", "<br/>");
+            document.write("즐겁습니다", "<br/>");
+            printLine("*+#", 20); // 함수 안에 함수 호출 가능           
+        }
+
+        function printLine(pattern, num){
+            var line = "";
+            for(var i=0; i<num; i++)
+                line += pattern;
+            document.write(line, "<br/><br/>");
+        }
+        
+        for(var i=0; i<3; i++){
+            message();
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

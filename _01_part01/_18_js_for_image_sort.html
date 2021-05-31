@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.image-container{
+            position: relative;
+        }
+        div.image-container img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 120px;
+        }
+        #btnStart{
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnStart").click(function(){
+                var $imageList = $("img");
+                var length = $imageList.length;
+                for (var i=0; i<length; i++){
+                    var $img = $imageList.eq(i);
+                    var x = 100 + (i*150); //간격을 줄이면 겹치게 보인다
+                    $img.css({left: x, top:100});
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <button id="btnStart">정렬 시작</button>
+    </div>
+    <div class="image-container">
+        <img src="../banners/1.png">
+        <img src="../banners/2.png">
+        <img src="../banners/3.png">
+        <img src="../banners/4.png">
+        <img src="../banners/5.png">
+    </div>
+</body>
+</html>

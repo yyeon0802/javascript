@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .banner{
+            width:400px;
+            height:200px;
+            top:10px;
+            left:100px;
+            position:absolute;
+            border:3px solid red;
+            box-shadow:10px 10px gray;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            let timerID = null;
+            let speed = 1000;
+            let imageList= ["logo_01.jpg", "logo_02.jpg",
+                            "logo_03.jpg", "logo_04.jpg",
+                            "logo_05.jpg", "logo_06.jpg",
+                            "logo_07.jpg", "logo_08.jpg"];
+
+            banner("#banner1", imageList);
+
+            $(document).keydown(function(e){
+                let isDown = false; //아무키나 눌리는걸방지함
+                if(e.keyCode==38){       // 방향키 상
+                    speed -= 100;
+                    if(speed <= 100)
+                        speed = 100;
+                    isDown = true;
+                }
+                else if(e.keyCode==40){  // 방향키 하
+                    speed += 100;
+                    if(speed >= 2000)
+                        speed = 2000;
+                    isDown = true;
+                }   
+                if(isDown) {
+                    clearInterval(timerID);
+                    banner("#banner1", imageList);
+                }
+            });
+
+            function banner(selector, imgList){
+                let currentIndex = 1;
+                let $banner = $(selector);
+
+                timerID = setInterval(function(){
+                    currentIndex++;
+                    if(currentIndex >= imgList.length)
+                        currentIndex = 0;
+                    let imgName = imgList[currentIndex];
+                    $banner.attr("src", "./images/"+imgName);
+                }, speed);
+            }
+        });
+    </script>
+</head>
+<body>
+    <img src="./images/logo_01.jpg" 
+            class="banner" id="banner1"/>
+</body>
+</html>

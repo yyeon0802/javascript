@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      a=1; // var a=1 , window a=1; type=number
+
+
+      //변수 선언은 되었지만 값의 대입이 이루어지지 않아
+      // undefined로 초기화 되어있다. (undefined->데이터 타입을 모르겠다는 뜻)
+      var b;
+
+      //{} -> 블록
+      if(a==1){
+          /* 함수를 제외한 블록{}에 선언된 변수는 
+            모두 전역변수로 생성되게 된다.
+          */
+        var aaa="홍길동";
+      }
+
+      //function(){} : 함수블록
+      function test(){
+          var bbb="임꺽정";
+          //  함수 블록에 있는 변수는 지역변수
+          //  함수 내에서만 사용가능하고, 밖에서는 존재하지 않는 변수 
+      }
+
+      document.write(aaa,"<br/>")
+      document.write(b, "<br/>")
+      document.write(bbb,"<br/>") 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

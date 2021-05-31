@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #panel{
+            width: 600px;
+            height: 300px;
+            border: 1px solid #999;
+            position: relative;
+        }
+        #bar{
+            position: absolute;
+            left: 50px;
+            top: 120px;
+            width:500px;
+            height:20px;
+            background:red;
+        }
+        #img1{
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+        #nav{
+            text-align: center;
+            width: 600px;
+        }
+    </style>    
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            var $fish = $("#img1");
+            $("#btnStart").click(function(){
+                var value = window.prompt("X좌표 입력");
+                value = parseInt(value);
+                if(value >= 0 && value <= 430)
+                    $fish.css("left", value);
+                else
+                    alert("유요한 좌표값이 입력되지 않았습니다.")
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="panel">
+        <div id="bar"></div>
+        <div id="img1">
+            <img src="../images/fish.png">
+        </div>
+    </div>
+    <div id="nav">
+        <button id="btnStart">좌표값 입력받기</button>
+    </div>    
+</body>
+</html>

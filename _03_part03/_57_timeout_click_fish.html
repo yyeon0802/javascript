@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .panel{
+      width: 600px;
+      height: 400px;
+      position: relative;
+      border: 2px solid black;
+    }
+    .panel #fish{
+      position: absolute;
+      left: 250px;
+      top: 150px;
+    }
+    
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+  <script>
+    
+    $(document).ready(function(){
+      let count = 0;
+      let $score=$("#score")
+      let isPlaying = true;   //플레이 가능 여부
+      $("#fish").click(function(){
+        if(isPlaying){
+          count++;
+          $score.text(count);
+        }
+      })
+      setTimeout(function(){
+        isPlaying=false;
+        alert("5초가 지나 게임이 종료 되었습니다.")
+      }, 5000);
+    });
+  </script>
+</head>
+<body>
+  <div>현재 점수 <span id="score">0</span></div>
+  <div class="panel">
+    <img src="images/fish1.png" id="fish">
+  </div>
+</body>
+</html>

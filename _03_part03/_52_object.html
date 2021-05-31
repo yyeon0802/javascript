@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. 객체를 만드는 방법
+    /*
+    let tv = new Object();
+    tv.color = "white";
+    tv.price = 300000000;
+    tv.info = function(){
+      document.write("tv 색상: " + this.color, "<br/>");
+      document.write("tv 가격: " + this.price, "<br/>");
+    }
+
+    tv.info();
+    */
+
+    /*
+    let calc = new Object();
+    calc.result = 0;
+    calc.add = function(num0, num1){this.result = num0+num1;}
+    calc.sub = function(num0, num1){this.result = num0-num1;}
+    calc.mul = function(num0, num1){this.result = num0*num1;}
+    calc.div = function(num0, num1){this.result = num0/num1;}
+    calc.show = function(){
+      document.write("result="+this.result, "<br/>");
+    }
+
+    calc.add(100, 200);
+    calc.show();
+    */
+
+    // 2. 객체를 만드는 방법
+    /*
+    let car = {
+      color:"black",
+      price:5000000000,
+      info:function(){
+        document.write("car 색상:" + this.color, "<br/>");
+        document.write("car 가격:" + this.price, "<br/>");
+      }
+    }
+    
+    car.info();
+    */
+
+    // 3. 객체 생성자 함수로 객체 생성
+    function CheckWeight(name, height, weight){
+      this.userName = name;
+      this.userHeight = height;
+      this.userWeight = weight;
+      this.minWeight;
+      this.maxWeight;
+
+      this.getInfo = function(){
+        let str = "";
+        str += "이름:" + this.userName + ", ";
+        str += "키:" + this.userHeight + ", ";
+        str += "몸무게:" + this.userWeight + "<br/>";
+        return str;
+      }
+      this.getResult = function(){
+        this.minWeight = (this.userHeight-100)*0.9-5;
+        this.maxWeight = (this.userHeight-100)*0.9+5;
+        if(this.userWeight >= this.minWeight &&
+          this.userWeight <= this.maxWeight){
+            return "정상 몸무게입니다";
+          }else if(this.userWeight < this.minWeight){
+            return "정상 몸무게보다 미달입니다";
+          }else{
+            return "정상 몸무게보다 초과입니다";
+          }
+      }
+    }
+
+    let jang = new CheckWeight("장나라", 158, 56);
+    let hong = new CheckWeight("홍길동", 174, 76);
+    console.log(jang.getInfo());
+    console.log(jang.getResult());
+    console.log(hong.getResult());
+
+    // 4. 비교적 최근에 도입된 Class로 객체 생성 방법
+    /*
+    class User{
+      constructor(name){
+        this.name = name;
+      }
+      sayHi(){
+        document.write(this.name, "<br/>");
+      }
+    }
+
+    let user0 = new User("홍길동");
+    user0.sayHi();
+    let user1 = new User("임꺽정");
+    user1.sayHi();
+    */
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

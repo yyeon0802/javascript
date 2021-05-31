@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // number -> String 변환
+        var num = 15;
+        console.log(num, typeof num);
+        var str = String(num);
+        console.log(str, typeof str);
+        var str1 = num.toString();
+        console.log(str1, typeof str1);
+        var str2 = num + "";
+        console.log(str2, typeof str2);
+
+        // String -> number 변환
+        var value = "123.4567";
+        var num = parseInt(value);      // 정수 변환
+        console.log(num, typeof num);   
+        var num1= parseFloat(value);    // 실수 변환
+        console.log(num1, typeof num1);
+        var num2 = Number(value);
+        console.log(num2, typeof num2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       
+       /* const란, 한번 초기화 한 값을 더이상 변경 불가능 하며,
+       에러를 방지하고
+       변경되면 안 되는 값의 만일의 실수를 방지하기 위해 사용 */
+
+
+       const i = 10;
+       i = 1000;
+       //Uncaught TypeError: Assignment to constant variable. 
+       //한번 초기화 해놓은 const에 assignment 할 수 없다.
+       document.write(i, "<br/>");
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

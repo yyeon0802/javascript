@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        /*지역 변수 count는 클로저 함수인 addCount에 의해
+        계속 메모리에 존재하게 된다.*/
+
+        function createCount(){
+            let count=0;
+            function addCount(){
+                count++;
+                return count;
+            }
+            return addCount;
+        }
+
+        let counter = createCount();
+        document.write("1. count=" + counter(), "<br/>");
+        document.write("2. count=" + counter(), "<br/>");
+        document.write("3. count=" + counter(), "<br/>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

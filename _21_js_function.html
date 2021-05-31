@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 함수 선언 - 1 (일반 함수 방식)
+    function add(num0, num1){
+      return num0 + num1;
+    }
+
+    // 함수 선언 - 2 (리터럴 방식)
+    var sub = function(num0, num1){
+      return num0 - num1;
+    }
+
+    // 함수 선언 - 3 (화살표 함수, 람다식)
+    var mul = (num0, num1) => {
+      return num0 * num1;
+    }
+    
+    // 함수 선언 - 4 (화살표 함수, 람다식)
+    var div = (num0, num1) => (num0/num1);
+
+    // 객체 방식 - 5
+    var remainder = new Function("num0", "num1", 
+                        "return num0%num1;");
+
+    document.write(add(100, 50), "<br/>");
+    document.write(sub(100, 50), "<br/>");
+    document.write(mul(100, 50), "<br/>");
+    document.write(div(100, 50), "<br/>");
+    document.write(remainder(100, 50), "<br/>");
+    // 익명함수 확장 방식 - 6
+    document.write((function(num0, num1){
+                    return num0 + num1;
+                  })(1000, 20), "<br/>");
+    document.write(((num0, num1) => (num0/num1))(1000, 20), "<br/>");
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

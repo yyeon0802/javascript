@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    
+    //    ECMA6(ES6) 부터 var를 대신해서 let 과 const가 등장
+
+    /* let : 변수 이름의 중복을 막는다.
+        var는 새로 정의하면 다시 덮어쓰므로, 값이나 타입을 전환할 수 있다. 
+        하지만, 의도치 않은 값의 변경, 타입변경이 일어나 오류의 원인이 될 수 있다.
+
+        window에 선언되는 전역변수가 아니다.  window.let xxx 
+    */
+    let aaa = "홍길동";
+    //Uncaught SyntaxError: Identifier 'aaa' has already been declared
+    let aaa = "임꺽정";    
+
+    document.write(aaa,"<br/>");
+    
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

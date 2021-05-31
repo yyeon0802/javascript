@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tab-menu{
+            list-style:none;
+            height:80px;
+        }
+        .tab-menu li{
+            width:99px;
+            height:40px;
+            background-position-y:0px;
+            text-indent:-1000px;    /*글씨를 왼쪽 안보이는 곳으로 감춘다*/
+            overflow:hidden;
+            display:inline-block;
+            float:left;
+        }
+        .tab-menu li:hover{
+            background-position-y:-40px;
+        }
+        .tab-menu li.select{
+            background-position-y:-80px;
+            height:80px;
+        }
+        .tab-menu li.menuitem1{
+            background-image:url("./images/newbtn.bar.1.png");
+        }
+        .tab-menu li.menuitem2{
+            background-image:url("./images/newbtn.bar.2.png");
+        }
+        .tab-menu li.menuitem3{
+            background-image:url("./images/newbtn.bar.3.png");
+        }
+        .tab-menu li.menuitem4{
+            background-image:url("./images/newbtn.bar.4.png");
+        }
+        .tab-menu li.menuitem5{
+            background-image:url("./images/newbtn.bar.5.png");
+        }
+        .tab-menu li.menuitem6{
+            background-image:url("./images/newbtn.bar.6.png");
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            tabMenu("#tabMenu1 li");
+            tabMenu("#tabMenu2 li");
+            tabMenu("#tabMenu3 li");
+        });
+
+        function tabMenu(selector){
+            var $selectMenuItem = null;
+
+            $(selector).click(function(){
+                // 이전에 선택한 메뉴가 있다면
+                if($selectMenuItem != null)
+                    $selectMenuItem.removeClass("select");
+
+                // 현재 클릭한 항목을 <선택메뉴>로 지정해준다
+                $selectMenuItem = $(this);
+                // <선택메뉴>에 동적으로 select클래스를 추가해준다
+                $selectMenuItem.addClass("select");
+            });
+            //즉 재사용이 가능하고, 여러개의 탭이 있어도 다 적용이 가능하다.
+        }
+    </script>
+</head>
+<body>
+    <p>첫번째 탭메뉴</p>
+    <ul class="tab-menu" id="tabMenu1">
+        <li class="menuitem1">google</li>
+        <li class="menuitem2">facebook</li>
+        <li class="menuitem3">pinterest</li>
+        <li class="menuitem4">twitter</li>
+        <li class="menuitem5">airbnb</li>
+        <li class="menuitem6">path</li>
+    </ul>
+    <p>두번째 탭메뉴</p>
+    <ul class="tab-menu" id="tabMenu2">
+        <li class="menuitem1">google</li>
+        <li class="menuitem2">facebook</li>
+        <li class="menuitem3">pinterest</li>
+        <li class="menuitem4">twitter</li>
+        <li class="menuitem5">airbnb</li>
+        <li class="menuitem6">path</li>
+    </ul>
+    <p>세번째 탭메뉴</p>
+    <ul class="tab-menu" id="tabMenu3">
+        <li class="menuitem1">google</li>
+        <li class="menuitem2">facebook</li>
+        <li class="menuitem3">pinterest</li>
+        <li class="menuitem4">twitter</li>
+        <li class="menuitem5">airbnb</li>
+        <li class="menuitem6">path</li>
+    </ul>
+</body>
+</html>

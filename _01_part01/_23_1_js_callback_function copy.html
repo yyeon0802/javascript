@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+
+      $(document).keydown(function (e) {
+        console.log(e.keyCode);
+        
+        // callback 함수 4개를 등록
+        arrowKey(e.keyCode, function () {
+                var $child = $("<p>❤😊😂👌😉</p>");
+                $("#panel").append($child);
+              }, function () {
+                var $child = $("<p>👍😜👏💋🌹</p>");
+                $("#panel").append($child);
+              }, function () {
+                var $child = $("<p>😃👀✨🎉🎂</p>");
+                $("#panel").append($child);
+              }, function () {
+                var $child = $("<p>🤦‍♀️🤦‍♂️🤷‍♀️🤷‍♂️👩</p>");
+                $("#panel").append($child);
+              }
+          );
+      });
+
+    function arrowKey(keyCode, left_func, right_func,
+                                up_func, down_func) {
+      switch (keyCode) {
+        case 37: left_func(); break;    // 좌
+        case 39: right_func(); break;   // 우
+        case 38: up_func(); break;      // 상
+        case 40: down_func(); break;    // 하
+      }
+    }
+  });
+
+
+  
+  </script>
+</head>
+
+<body>
+  <div id="panel"></div>
+</body>
+
+</html>

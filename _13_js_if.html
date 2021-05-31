@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .d-checkbox{
+      position:relative;
+      left:100px;
+      top:100px;
+    }
+    .d-checkbox .checkbox{
+      width:20px;
+      height:15px;
+      float:left;
+      background:url(images/checkbox_uncheck.png) no-repeat;
+    }
+    .d-checkbox .checkbox.check{
+      background:url(images/checkbox_check.png) no-repeat;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+      var isClick = false;
+      var $chk = $(".d-checkbox .checkbox");
+
+      $(".d-checkbox").click(function(){
+        isClick = !isClick;  // true <-> false
+        if(isClick) 
+          $chk.addClass("check");
+        else
+          $chk.removeClass("check");
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="d-checkbox">
+    <div class="checkbox"></div>
+    <div class="label">체크박스 - 여기를 클릭하세요</div>
+  </div>
+</body>
+</html>

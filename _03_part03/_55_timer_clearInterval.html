@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #output{
+      width:200px;
+      height:200px;
+      border:4px solid black;
+      margin:50px;
+      font-size:100px;
+      text-align:center;
+      line-height:200px;
+      vertical-align: middle;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+  <script>
+   
+
+    $(document).ready(function(){
+      let $output = $("#output");
+      let count = 0;
+      let timerID=null;
+      
+      /*타이머 함수가 호출할 때, 자바스크립트 내부에 타이머가 할당되고
+      해당 타이머를 제어하기위해 '타이머 ID'를 반환한다.
+      이 '타이머 ID'로 멈출 수 있다.*/
+     timerID = setInterval(function(){
+        count++;
+        $output.text(count);
+      }, 100);
+
+      $("#btnStop").click(function(){
+        clearInterval(timerID);
+      });
+    });
+  </script>
+</head>
+<body>
+  <button id="btnStop">멈춤</button>
+  <div id="output">0</div>
+</body>
+</html>

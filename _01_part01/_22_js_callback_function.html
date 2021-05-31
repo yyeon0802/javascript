@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calc(calc_func){ //만들어진 함수를 매개변수로 받는다
+            var result = calc_func(100, 50);
+            console.log(result);
+        }
+        function add(num0, num1){
+            return num0 + num1;
+        }
+
+        function sub(num0, num1){
+            return num0 - num1;
+        }
+        
+        calc(add); // 함수 호출
+        calc(sub); //넘겨준 콜백 함수에 따라 결과가 달라진다.
+
+        // 즉석에서 코드만 넘겨주는 사용
+        //단순히 function calc에 코드를 매개변수로 넘겨주기 위함
+        calc(function(num0, num1){
+            return num0 * num1;
+        });
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

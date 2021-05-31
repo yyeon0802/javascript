@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #info{
+      width:200px;
+      height:200px;
+      border:4px solid black;
+      margin:50px;
+      font-size:100px;
+      text-align:center;
+      line-height:200px;
+      vertical-align: middle;
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            let $info = $("#info");
+
+            showRandom();
+            setInterval(showRandom, 500);   // 0.5초
+
+            function showRandom(){
+                let value = parseInt(Math.random()*50)+50;//50~99
+                $info.text(value);
+            }
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="info">0</div>
+</body>
+</html>

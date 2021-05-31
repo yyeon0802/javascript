@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>  
+    <script>
+        window.onload = function(){
+            document.querySelector("#btnStart").addEventListener("click", function(){
+                var count=0; //주사위 굴린 반복 회수
+                while(true){
+                    count++;
+                    var num = parseInt(Math.random()*6)+1; //1~6까지 범위
+                    console.log(count+"번째 나온 숫자="+num);
+                    if(num == 3){
+                        console.log("탈출");
+                        break;
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <button id="btnStart">주사위 던지기</button>
+</body>
+</html>

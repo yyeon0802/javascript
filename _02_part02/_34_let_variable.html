@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*java와 같은 major 언어는 기본적으로 블록레벨 스코프를 따른다.
+            (=블록 내 변수 선언은 지역변수)
+          
+            javascript는 함수 내 블록만 지역변수로 인정,
+            나머지 블록은 전역변수로 선언 됨.(var로 선언시)
+
+            let은 함수를 포함한 모든 블록{}내의 변수를 지역변수로 판단한다.
+            해당 지역이 끝나면 소멸된다.
+        */
+        let aaa = "홍길동";
+        {
+            let aaa = "임꺽정";
+            document.write(aaa, "<br/>");
+        }
+        document.write(aaa,"<br/>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

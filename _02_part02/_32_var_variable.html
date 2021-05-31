@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       /*  var 변수와 함수는 실행될 때, 디른 것에 우선하여 최초로 메모리에 로딩된다.
+            이것을 호이스팅이라 부른다.
+       */
+       console.log(i); //undefined(존재하지만 정의되지 않음)
+        i = 100;
+        console.log(i);
+        var i; //변수선언이 가장 먼저 메모리에 올라간다.(변수 호이스팅)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

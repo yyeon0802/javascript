@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //overlap 함수의 모습
+
+        /*count는 지역변수이지만 내부함수에 의해 사용되어 진다.
+        이때는 count를 startHello()의 호출이 끝났다고 제거되지 않고
+        유지하게 된다. 이것을"클로저"라 부르고 setInterval내의 익명함수를
+        클로저 함수 라고 부른다. 이렇게 함수내에서 값을 유지 하기 위해서는
+        지역 변수를 참조하는 "클로저 함수"를 만들어서 사용할 수 있다.*/
+         function startHello(){
+             let count = 0;
+             setInterval(function(){
+                 count++;
+                 document.write(count+"안녕하세요", "<br/>");
+             },1000);
+         }
+
+       startHello();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

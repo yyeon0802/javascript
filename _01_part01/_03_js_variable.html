@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // javascript : 동적타입언어
+        // etc) java : 정적타입(규격 준수, 에러방지) / python : 동적타입언어(사용성 중시)
+
+        //명시적 선언
+        var box;                    // window.box로 전역변수 생성 됨
+        console.log(box);           // 값이 정해지지 않은 undefined 
+        console.log(window.box);    // 위 아래 같다. undefined
+        box = 100;
+        console.log(box);
+        console.log(typeof box);    // number
+        box = "홍길동";
+        console.log(box);
+        console.log(typeof box);    // string
+
+        //암시적 선언
+        name = "임꺽정"; // 전역변수선언
+        console.log(name);
+        console.log(window.name);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

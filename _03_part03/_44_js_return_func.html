@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // 리턴값으로 함수 객체를 반환할 수 있다.
+        // 함수 안에 있는 내부함수를 밖에서 사용할 수 있도록 리턴이 가능 
+        // 내부함수(inner function) or 중첩함수라고 부른다
+        
+        function createHello(){
+            function hello(user){
+                document.write(user+"님 방문을 환영합니다", "<br/>");
+            }
+            return hello;
+        }
+        
+        let result = createHello();
+        result("홍길동");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

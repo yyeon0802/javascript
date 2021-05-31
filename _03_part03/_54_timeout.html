@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #output{
+      width:200px;
+      height:200px;
+      border:4px solid black;
+      margin:50px;
+      font-size:100px;
+      text-align:center;
+      line-height:200px;
+      vertical-align: middle;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+      let $output = $("#output");
+
+      //3초후 1번만 호출되고 마무리되는 함수 등록
+      setTimeout(function(){
+        $output.text("안녕하세요. ");
+      }, 3000);
+    });
+  </script>
+</head>
+<body>
+  <div id="output">0</div>
+</body>
+</html>
